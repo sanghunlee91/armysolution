@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아미솔루션🪖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: linear-gradient(45deg,
+                    rgb(51 43 43 / 75%),
+                    rgb(20 19 20 / 61%)), url("https://cdn.psychiatricnews.net/news/photo/202307/34631_30728_1429.jpg");
+            max-height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .btn.btn-danger.btn-lg {
+            margin-bottom: 50px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+                /* 기본 텍스트 크기 */
+                .lead {
+            font-size: 1.25rem;
+            /* 기본 텍스트 크기 */
+        }
+
+        /* 모바일 화면에서 텍스트 크기 조정 */
+        @media (max-width: 767px) {
+            .lead {
+                font-size: 1rem;
+                /* 모바일 화면에서 작게 조정한 텍스트 크기 */
+            .footer {
+                font-size: 1rem;
+            }
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body data-bs-theme="dark">
+    <div class="background-banner">
+        <nav class="navbar border-bottom border-bottom-dark d-flex justify-content-center" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('armysolution') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('depression') }}">우울증</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('anxiety') }}">불안장애</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('ptsd') }}">PTSD</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ url_for('adhd') }}">ADHD</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold text-white">상담 예약이<br>성공적으로 완료되었습니다</h1>
+            
+
+        <div class="footer">
+            <p class="lead mb-4">
+                <br>
+                나도 내 마음을 모를때가 있어요.<br>
+                여러분은 혼자가 아닙니다.<br>
+                저희가 함께하겠습니다.<br><br>
+                - 아미솔루션 -
+            </p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아미솔루션🪖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: linear-gradient(45deg,
+                    rgb(51 43 43 / 75%),
+                    rgb(20 19 20 / 61%)), url("https://cdn.psychiatricnews.net/news/photo/202307/34631_30728_1429.jpg");
+            max-height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .large-submit-button {
+            /* 원하는 크기로 지정하세요 */
+            width: 200px;
+            /* 너비 */
+            height: 50px;
+            /* 높이 */
+
+            /* 기타 스타일 */
+            font-size: 20px;
+        }
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+            * {
+                font-family: 'Poppins', sans-serif;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="background-banner">
+        <nav class="navbar border-bottom border-bottom-dark d-flex justify-content-center" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('armysolution') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('depression') }}">우울증</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('anxiety') }}">불안장애</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('ptsd') }}">PTSD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('adhd') }}">ADHD</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-white">PTSD (외상 후 스트레스 장애) 검사</h1>
+        <div class="col-lg-8 mx-auto" style="text-align: center;"><br>
+            <form action="/ptsd/submit/" method="post" style="text-align: center;">
+                <h2>최근 1달 동안, 다음과 같은 상황들로 인해 얼마나 괴로웠는지 체크해보세요.</h2><br><br>
+                <div style="text-align: left;">
+                    <label for="question_1" style="font-size: 20px;">1. 그 스트레스 경험에 대한 불쾌하고 기억하고 싶지 않은 기억이 반복적으로 떠오릅니까?</label><br><br>
+                    <input type="radio" id="question_1_0" name="question_1" value="0">
+                    <label for="question_1_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_1_1" name="question_1" value="1">
+                    <label for="question_1_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_1_2" name="question_1" value="2">
+                    <label for="question_1_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_1_3" name="question_1" value="3">
+                    <label for="question_1_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_1_4" name="question_1" value="4">
+                    <label for="question_1_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_2" style="font-size: 20px;">2. 그 스트레스 경험에 대한 악몽을 반복해서 꾸십니까?</label><br><br>
+                    <input type="radio" id="question_2_0" name="question_2" value="0">
+                    <label for="question_2_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_2_1" name="question_2" value="1">
+                    <label for="question_2_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_2_2" name="question_2" value="2">
+                    <label for="question_2_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_2_3" name="question_2" value="3">
+                    <label for="question_2_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_2_4" name="question_2" value="4">
+                    <label for="question_2_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_3" style="font-size: 20px;">3. 별안간 그 스트레스 경험을 실제로 다시 겪는 것처럼 (마치 그곳에 실제로 되돌아가서 경험하는 것 같이) 느껴지거나 행동하게 됩니까?</label><br><br>
+                    <input type="radio" id="question_3_0" name="question_3" value="0">
+                    <label for="question_3_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_3_1" name="question_3" value="1">
+                    <label for="question_3_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_3_2" name="question_3" value="2">
+                    <label for="question_3_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_3_3" name="question_3" value="3">
+                    <label for="question_3_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_3_4" name="question_3" value="4">
+                    <label for="question_3_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_4" style="font-size: 20px;">4. 뭔가 그 스트레스 경험을 다시 떠오르게 한다면, 매우 불쾌한 감정을 느끼십니까?</label><br><br>
+                    <input type="radio" id="question_4_0" name="question_4" value="0">
+                    <label for="question_4_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_4_1" name="question_4" value="1">
+                    <label for="question_4_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_4_2" name="question_4" value="2">
+                    <label for="question_4_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_4_3" name="question_4" value="3">
+                    <label for="question_4_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_4_4" name="question_4" value="4">
+                    <label for="question_4_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_5" style="font-size: 20px;">5. 뭔가 그 스트레스 경험을 다시 떠오르게 한다면, 격한 신체반응이 나타납니까? (예를 들면, 심장이 두근거리거나, 숨쉬기 힘들거나, 땀이 나는 것)</label><br><br>
+                    <input type="radio" id="question_5_0" name="question_5" value="0">
+                    <label for="question_5_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_5_1" name="question_5" value="1">
+                    <label for="question_5_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_5_2" name="question_5" value="2">
+                    <label for="question_5_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_5_3" name="question_5" value="3">
+                    <label for="question_5_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_5_4" name="question_5" value="4">
+                    <label for="question_5_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_6" style="font-size: 20px;">6.	그 스트레스 경험과 관련된 기억이나 생각 또는 감정을 피하십니까?</label><br><br>
+                    <input type="radio" id="question_6_0" name="question_6" value="0">
+                    <label for="question_6_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_6_1" name="question_6" value="1">
+                    <label for="question_6_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_6_2" name="question_6" value="2">
+                    <label for="question_6_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_6_3" name="question_6" value="3">
+                    <label for="question_6_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_6_4" name="question_6" value="4">
+                    <label for="question_6_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_7" style="font-size: 20px;">7. 그 스트레스 경험을 떠오르게 하는 외부 상황을 피하십니까? (예를 들면, 사람, 장소, 대화, 활동, 물건 또는 상황)</label><br><br>
+                    <input type="radio" id="question_7_0" name="question_7" value="0">
+                    <label for="question_7_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_7_1" name="question_7" value="1">
+                    <label for="question_7_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_7_2" name="question_7" value="2">
+                    <label for="question_7_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_7_3" name="question_7" value="3">
+                    <label for="question_7_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_7_4" name="question_7" value="4">
+                    <label for="question_7_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_8" style="font-size: 20px;">8. 그 스트레스 경험의 중요한 부분을 기억하기 어렵습니까?</label><br><br>
+                    <input type="radio" id="question_8_0" name="question_8" value="0">
+                    <label for="question_8_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_8_1" name="question_8" value="1">
+                    <label for="question_8_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_8_2" name="question_8" value="2">
+                    <label for="question_8_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_8_3" name="question_8" value="3">
+                    <label for="question_8_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_8_4" name="question_8" value="4">
+                    <label for="question_8_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_9" style="font-size: 20px;">9. 자기 자신, 다른 사람들, 혹은 세상에 대해 매우 부정적인 신념을 가지고 있습니까? (예를 들어, 나는 나쁘다, 나에게는 뭔가 심각하게 잘못된 것이 있다. 아무도 믿을 수 없다. 세상은 너무나 위험하다)</label><br><br>
+                    <input type="radio" id="question_9_0" name="question_9" value="0">
+                    <label for="question_9_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_9_1" name="question_9" value="1">
+                    <label for="question_9_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_9_2" name="question_9" value="2">
+                    <label for="question_9_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_9_3" name="question_9" value="3">
+                    <label for="question_9_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_9_4" name="question_9" value="4">
+                    <label for="question_9_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_10" style="font-size: 20px;">10. 그 스트레스 경험이나 그 경험 이후에 일어난 일들에 대하여 자기 자신 탓이나 다른 사람 탓을 하고 있습니까?</label><br><br>
+                    <input type="radio" id="question_10_0" name="question_10" value="0">
+                    <label for="question_10_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_10_1" name="question_10" value="1">
+                    <label for="question_10_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_10_2" name="question_10" value="2">
+                    <label for="question_10_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_10_3" name="question_10" value="3">
+                    <label for="question_10_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_10_4" name="question_10" value="4">
+                    <label for="question_10_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_11" style="font-size: 20px;">11. 공포, 혐오, 분노, 죄책감, 수치심 같은 매우 부정적인 감정이 있습니까?</label><br><br>
+                    <input type="radio" id="question_11_0" name="question_11" value="0">
+                    <label for="question_11_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_11_1" name="question_11" value="1">
+                    <label for="question_11_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_11_2" name="question_11" value="2">
+                    <label for="question_11_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_11_3" name="question_11" value="3">
+                    <label for="question_11_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_11_4" name="question_11" value="4">
+                    <label for="question_11_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_12" style="font-size: 20px;">12. 이전에 자주 즐겼던 활동들에 대한 흥미를 잃어버렸습니까?</label><br><br>
+                    <input type="radio" id="question_12_0" name="question_12" value="0">
+                    <label for="question_12_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_12_1" name="question_12" value="1">
+                    <label for="question_12_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_12_2" name="question_12" value="2">
+                    <label for="question_12_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_12_3" name="question_12" value="3">
+                    <label for="question_12_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_12_4" name="question_12" value="4">
+                    <label for="question_12_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_13" style="font-size: 20px;">13. 다른 사람들과 동떨어졌거나 단절되었다고 느끼십니까?</label><br><br>
+                    <input type="radio" id="question_13_0" name="question_13" value="0">
+                    <label for="question_13_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_13_1" name="question_13" value="1">
+                    <label for="question_13_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_13_2" name="question_13" value="2">
+                    <label for="question_13_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_13_3" name="question_13" value="3">
+                    <label for="question_13_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_13_4" name="question_13" value="4">
+                    <label for="question_13_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_14" style="font-size: 20px;">14. 긍정적인 감정을 느끼는 것이 어렵습니까? (예를 들면, 행복하다고 느낄 수 없거나 가까운 사람들에 대해 사랑하는 감정을 가질 수 없다)</label><br><br>
+                    <input type="radio" id="question_14_0" name="question_14" value="0">
+                    <label for="question_14_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_14_1" name="question_14" value="1">
+                    <label for="question_14_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_14_2" name="question_14" value="2">
+                    <label for="question_14_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_14_3" name="question_14" value="3">
+                    <label for="question_14_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_14_4" name="question_14" value="4">
+                    <label for="question_14_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_15" style="font-size: 20px;">15. 과민 행동, 분노 폭발 또는 공격적인 행동을 하십니까?</label><br><br>
+                    <input type="radio" id="question_15_0" name="question_15" value="0">
+                    <label for="question_15_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_15_1" name="question_15" value="1">
+                    <label for="question_15_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_15_2" name="question_15" value="2">
+                    <label for="question_15_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_15_3" name="question_15" value="3">
+                    <label for="question_15_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_15_4" name="question_15" value="4">
+                    <label for="question_15_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_16" style="font-size: 20px;">16. 너무 많은 위험을 감수하거나 자신에게 해가 될 수 있는 위험한 행동을 하십니까?</label><br><br>
+                    <input type="radio" id="question_16_0" name="question_16" value="0">
+                    <label for="question_16_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_16_1" name="question_16" value="1">
+                    <label for="question_16_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_16_2" name="question_16" value="2">
+                    <label for="question_16_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_16_3" name="question_16" value="3">
+                    <label for="question_16_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_16_4" name="question_16" value="4">
+                    <label for="question_16_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_17" style="font-size: 20px;">17. 조금도 방심하지 않으려고 하거나 주변을 감시하거나 혹은 경계하게 되십니까?</label><br><br>
+                    <input type="radio" id="question_17_0" name="question_17" value="0">
+                    <label for="question_17_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_17_1" name="question_17" value="1">
+                    <label for="question_17_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_17_2" name="question_17" value="2">
+                    <label for="question_17_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_17_3" name="question_17" value="3">
+                    <label for="question_17_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_17_4" name="question_17" value="4">
+                    <label for="question_17_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_18" style="font-size: 20px;">18. 조마조마한 느낌이 들거나 쉽게 깜짝 놀라십니까?</label><br><br>
+                    <input type="radio" id="question_18_0" name="question_18" value="0">
+                    <label for="question_18_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_18_1" name="question_18" value="1">
+                    <label for="question_18_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_18_2" name="question_18" value="2">
+                    <label for="question_18_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_18_3" name="question_18" value="3">
+                    <label for="question_18_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_18_4" name="question_18" value="4">
+                    <label for="question_18_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_19" style="font-size: 20px;">19. 집중하기가 어렵습니까?</label><br><br>
+                    <input type="radio" id="question_19_0" name="question_19" value="0">
+                    <label for="question_19_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_19_1" name="question_19" value="1">
+                    <label for="question_19_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_19_2" name="question_19" value="2">
+                    <label for="question_19_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_19_3" name="question_19" value="3">
+                    <label for="question_19_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_19_4" name="question_19" value="4">
+                    <label for="question_19_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+                    <label for="question_20" style="font-size: 20px;">20. 잠들기가 어렵거나 중간에 깨십니까?</label><br><br>
+                    <input type="radio" id="question_20_0" name="question_20" value="0">
+                    <label for="question_20_0" style="font-size: 18px;">괴롭지 않음</label><br>
+                    <input type="radio" id="question_20_1" name="question_20" value="1">
+                    <label for="question_20_1" style="font-size: 18px;">약간 괴로움</label><br>
+                    <input type="radio" id="question_20_2" name="question_20" value="2">
+                    <label for="question_20_2" style="font-size: 18px;">보통정도 괴로움</label><br>
+                    <input type="radio" id="question_20_3" name="question_20" value="3">
+                    <label for="question_20_3" style="font-size: 18px;">많이 괴로움</label><br>
+                    <input type="radio" id="question_20_4" name="question_20" value="4">
+                    <label for="question_20_4" style="font-size: 18px;">매우 많이 괴로움</label><br><br><br>
+
+
+                </div>
+                <input type="submit" value="점수내기" class="large-submit-button">
+                
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        // 페이지 로드 시 실행되는 함수
+        window.onload = function () {
+            const form = document.querySelector('form'); // 폼 요소 가져오기
+
+            // 저장된 답변이 있으면 가져오기, 없으면 초기화
+            const savedAnswers = JSON.parse(localStorage.getItem('savedAnswers')) || {};
+
+            // 폼 안의 라디오 버튼들에 이벤트 리스너 등록
+            form.addEventListener('change', function (event) {
+                const target = event.target; // 이벤트 대상 요소 가져오기
+
+                // 라디오 버튼일 경우
+                if (target.type === 'radio') {
+                    const questionNumber = target.name; // 질문 번호
+                    const selectedValue = target.value; // 선택된 값
+
+                    // 선택된 값을 저장
+                    savedAnswers[questionNumber] = selectedValue;
+                    localStorage.setItem('savedAnswers', JSON.stringify(savedAnswers));
+                }
+            });
+
+            // 폼 제출 시 실행되는 함수
+            form.addEventListener('submit', function (event) {
+                // 모든 질문에 답이 선택되었는지 확인
+                for (let i = 1; i <= 6; i++) {
+                    const questionNumber = `question_${i}`;
+                    if (!savedAnswers[questionNumber]) {
+                        alert(`질문 ${i}에 답변을 선택해주세요.`);
+                        event.preventDefault(); // 제출 방지
+                        return;
+                    }
+                }
+            });
+
+            // 페이지 새로고침 시 저장된 답변 초기화
+            window.onbeforeunload = function () {
+                localStorage.removeItem('savedAnswers');
+            };
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아미솔루션🪖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: linear-gradient(45deg,
+                    rgb(51 43 43 / 75%),
+                    rgb(20 19 20 / 61%)), url("https://cdn.psychiatricnews.net/news/photo/202307/34631_30728_1429.jpg");
+            max-height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color : white
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .large-submit-button {
+            /* 원하는 크기로 지정하세요 */
+            width: 200px;
+            /* 너비 */
+            height: 50px;
+            /* 높이 */
+
+            /* 기타 스타일 */
+            font-size: 20px;
+        }
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+            * {
+                font-family: 'Poppins', sans-serif;
+            }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="background-banner">
+        <nav class="navbar border-bottom border-body d-flex justify-content-center" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('armysolution') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('depression') }}">우울증</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('anxiety') }}">불안장애</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('ptsd') }}">PTSD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ url_for('adhd') }}">ADHD</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-white">불안장애 검사</h1>
+        <div class="col-lg-8 mx-auto" style="text-align: center;"><br>
+            <form action="/anxiety/submit/" method="post" style="text-align: center;">
+                <h2>지난 1주 동안, 자신의 상태를 가장 잘 나타낸다고 생각되는 것에 체크해보세요.</h2><br><br>
+                <div style="text-align: left;">
+                    <label for="question_1" style="font-size: 20px;">1. 가끔씩 몸이 저리고 쑤시며 감각이 마비된 느낌을 받는다.</label><br><br>
+                    <input type="radio" id="question_1_0" name="question_1" value="0">
+                    <label for="question_1_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_1_1" name="question_1" value="1">
+                    <label for="question_1_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_1_2" name="question_1" value="2">
+                    <label for="question_1_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_1_3" name="question_1" value="3">
+                    <label for="question_1_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_2" style="font-size: 20px;">2. 흥분된 느낌을 받는다.</label><br><br>
+                    <input type="radio" id="question_2_0" name="question_2" value="0">
+                    <label for="question_2_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_2_1" name="question_2" value="1">
+                    <label for="question_2_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_2_2" name="question_2" value="2">
+                    <label for="question_2_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_2_3" name="question_2" value="3">
+                    <label for="question_2_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_3" style="font-size: 20px;">3. 가끔씩 다리가 떨리곤 한다</label><br><br>
+                    <input type="radio" id="question_3_0" name="question_3" value="0">
+                    <label for="question_3_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_3_1" name="question_3" value="1">
+                    <label for="question_3_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_3_2" name="question_3" value="2">
+                    <label for="question_3_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_3_3" name="question_3" value="3">
+                    <label for="question_3_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_4" style="font-size: 20px;">4. 편안하게 쉴 수가 없다.</label><br><br>
+                    <input type="radio" id="question_4_0" name="question_4" value="0">
+                    <label for="question_4_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_4_1" name="question_4" value="1">
+                    <label for="question_4_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_4_2" name="question_4" value="2">
+                    <label for="question_4_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_4_3" name="question_4" value="3">
+                    <label for="question_4_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_5" style="font-size: 20px;">5. 매우 나쁜 일이 일어날 것 같은 두려움을 느낀다.</label><br><br>
+                    <input type="radio" id="question_5_0" name="question_5" value="0">
+                    <label for="question_5_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_5_1" name="question_5" value="1">
+                    <label for="question_5_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_5_2" name="question_5" value="2">
+                    <label for="question_5_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_5_3" name="question_5" value="3">
+                    <label for="question_5_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_6" style="font-size: 20px;">6.	어지러움(현기증)을 느낀다.</label><br><br>
+                    <input type="radio" id="question_6_0" name="question_6" value="0">
+                    <label for="question_6_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_6_1" name="question_6" value="1">
+                    <label for="question_6_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_6_2" name="question_6" value="2">
+                    <label for="question_6_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_6_3" name="question_6" value="3">
+                    <label for="question_6_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_7" style="font-size: 20px;">7. 가끔씩 심장이 두근거리고 빨리 뛴다.</label><br><br>
+                    <input type="radio" id="question_7_0" name="question_7" value="0">
+                    <label for="question_7_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_7_1" name="question_7" value="1">
+                    <label for="question_7_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_7_2" name="question_7" value="2">
+                    <label for="question_7_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_7_3" name="question_7" value="3">
+                    <label for="question_7_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_8" style="font-size: 20px;">8. 침착하지 못하다.</label><br><br>
+                    <input type="radio" id="question_8_0" name="question_8" value="0">
+                    <label for="question_8_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_8_1" name="question_8" value="1">
+                    <label for="question_8_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_8_2" name="question_8" value="2">
+                    <label for="question_8_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_8_3" name="question_8" value="3">
+                    <label for="question_8_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_9" style="font-size: 20px;">9. 자주 겁을 먹고 무서움을 느낀다.</label><br><br>
+                    <input type="radio" id="question_9_0" name="question_9" value="0">
+                    <label for="question_9_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_9_1" name="question_9" value="1">
+                    <label for="question_9_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_9_2" name="question_9" value="2">
+                    <label for="question_9_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_9_3" name="question_9" value="3">
+                    <label for="question_9_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_10" style="font-size: 20px;">10. 침착하지 못하다.</label><br><br>
+                    <input type="radio" id="question_10_0" name="question_10" value="0">
+                    <label for="question_10_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_10_1" name="question_10" value="1">
+                    <label for="question_10_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_10_2" name="question_10" value="2">
+                    <label for="question_10_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_10_3" name="question_10" value="3">
+                    <label for="question_10_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_11" style="font-size: 20px;">11. 자주 겁을 먹고 무서움을 느낀다.</label><br><br>
+                    <input type="radio" id="question_11_0" name="question_11" value="0">
+                    <label for="question_11_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_11_1" name="question_11" value="1">
+                    <label for="question_11_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_11_2" name="question_11" value="2">
+                    <label for="question_11_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_11_3" name="question_11" value="3">
+                    <label for="question_11_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_12" style="font-size: 20px;">12. 신경이 과민되어 왔다.</label><br><br>
+                    <input type="radio" id="question_12_0" name="question_12" value="0">
+                    <label for="question_12_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_12_1" name="question_12" value="1">
+                    <label for="question_12_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_12_2" name="question_12" value="2">
+                    <label for="question_12_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_12_3" name="question_12" value="3">
+                    <label for="question_12_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_13" style="font-size: 20px;">13. 가끔씩 숨이 막히고 질식할 것 같다.</label><br><br>
+                    <input type="radio" id="question_13_0" name="question_13" value="0">
+                    <label for="question_13_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_13_1" name="question_13" value="1">
+                    <label for="question_13_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_13_2" name="question_13" value="2">
+                    <label for="question_13_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_13_3" name="question_13" value="3">
+                    <label for="question_13_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_14" style="font-size: 20px;">14. 자주 손이 떨린다.</label><br><br>
+                    <input type="radio" id="question_14_0" name="question_14" value="0">
+                    <label for="question_14_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_14_1" name="question_14" value="1">
+                    <label for="question_14_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_14_2" name="question_14" value="2">
+                    <label for="question_14_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_14_3" name="question_14" value="3">
+                    <label for="question_14_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_15" style="font-size: 20px;">15. 안절부절못해 한다.</label><br><br>
+                    <input type="radio" id="question_15_0" name="question_15" value="0">
+                    <label for="question_15_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_15_1" name="question_15" value="1">
+                    <label for="question_15_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_15_2" name="question_15" value="2">
+                    <label for="question_15_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_15_3" name="question_15" value="3">
+                    <label for="question_15_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_16" style="font-size: 20px;">16. 미칠 것 같은 두려움을 느낀다.</label><br><br>
+                    <input type="radio" id="question_16_0" name="question_16" value="0">
+                    <label for="question_16_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_16_1" name="question_16" value="1">
+                    <label for="question_16_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_16_2" name="question_16" value="2">
+                    <label for="question_16_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_16_3" name="question_16" value="3">
+                    <label for="question_16_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_17" style="font-size: 20px;">17. 불안한 상태에 있다.</label><br><br>
+                    <input type="radio" id="question_17_0" name="question_17" value="0">
+                    <label for="question_17_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_17_1" name="question_17" value="1">
+                    <label for="question_17_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_17_2" name="question_17" value="2">
+                    <label for="question_17_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_17_3" name="question_17" value="3">
+                    <label for="question_17_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_18" style="font-size: 20px;">18. 자주 소화가 잘 안되고 뱃속이 불편하다.</label><br><br>
+                    <input type="radio" id="question_18_0" name="question_18" value="0">
+                    <label for="question_18_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_18_1" name="question_18" value="1">
+                    <label for="question_18_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_18_2" name="question_18" value="2">
+                    <label for="question_18_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_18_3" name="question_18" value="3">
+                    <label for="question_18_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_19" style="font-size: 20px;">19. 가끔씩 기절할 것 같다.</label><br><br>
+                    <input type="radio" id="question_19_0" name="question_19" value="0">
+                    <label for="question_19_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_19_1" name="question_19" value="1">
+                    <label for="question_19_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_19_2" name="question_19" value="2">
+                    <label for="question_19_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_19_3" name="question_19" value="3">
+                    <label for="question_19_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_20" style="font-size: 20px;">20. 자주 얼굴이 붉어지곤 한다.</label><br><br>
+                    <input type="radio" id="question_20_0" name="question_20" value="0">
+                    <label for="question_20_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_20_1" name="question_20" value="1">
+                    <label for="question_20_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_20_2" name="question_20" value="2">
+                    <label for="question_20_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_20_3" name="question_20" value="3">
+                    <label for="question_20_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+
+                    <label for="question_21" style="font-size: 20px;">21. 땀을 많이 흘린다.(더위로 인한 경우는 제외)</label><br><br>
+                    <input type="radio" id="question_21_0" name="question_21" value="0">
+                    <label for="question_21_0" style="font-size: 18px;">전혀 느끼지 않았다</label><br>
+                    <input type="radio" id="question_21_1" name="question_21" value="1">
+                    <label for="question_21_1" style="font-size: 18px;">조금 느꼈다</label><br>
+                    <input type="radio" id="question_21_2" name="question_21" value="2">
+                    <label for="question_21_2" style="font-size: 18px;">상당히 느꼈다</label><br>
+                    <input type="radio" id="question_21_3" name="question_21" value="3">
+                    <label for="question_21_3" style="font-size: 18px;">심하게 느꼈다</label><br>
+                    <br><br><br>
+                </div>
+                <input type="submit" value="점수내기" class="large-submit-button">
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+    <script>
+        // 페이지 로드 시 실행되는 함수
+        window.onload = function () {
+            const form = document.querySelector('form'); // 폼 요소 가져오기
+
+            // 저장된 답변이 있으면 가져오기, 없으면 초기화
+            const savedAnswers = JSON.parse(localStorage.getItem('savedAnswers')) || {};
+
+            // 폼 안의 라디오 버튼들에 이벤트 리스너 등록
+            form.addEventListener('change', function (event) {
+                const target = event.target; // 이벤트 대상 요소 가져오기
+
+                // 라디오 버튼일 경우
+                if (target.type === 'radio') {
+                    const questionNumber = target.name; // 질문 번호
+                    const selectedValue = target.value; // 선택된 값
+
+                    // 선택된 값을 저장
+                    savedAnswers[questionNumber] = selectedValue;
+                    localStorage.setItem('savedAnswers', JSON.stringify(savedAnswers));
+                }
+            });
+
+            // 폼 제출 시 실행되는 함수
+            form.addEventListener('submit', function (event) {
+                // 모든 질문에 답이 선택되었는지 확인
+                for (let i = 1; i <= 6; i++) {
+                    const questionNumber = `question_${i}`;
+                    if (!savedAnswers[questionNumber]) {
+                        alert(`질문 ${i}에 답변을 선택해주세요.`);
+                        event.preventDefault(); // 제출 방지
+                        return;
+                    }
+                }
+            });
+
+            // 페이지 새로고침 시 저장된 답변 초기화
+            window.onbeforeunload = function () {
+                localStorage.removeItem('savedAnswers');
+            };
+        };
+    </script>
+</body>
+
+</html>

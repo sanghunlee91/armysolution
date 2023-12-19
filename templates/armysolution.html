@@ -1,0 +1,285 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>아미솔루션🪖</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+        .background-banner {
+            background-image: linear-gradient(45deg,
+                    rgb(51 43 43 / 75%),
+                    rgb(20 19 20 / 61%)), url("https://cdn.psychiatricnews.net/news/photo/202307/34631_30728_1429.jpg");
+            max-height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .btn.btn-danger.btn-lg {
+            margin-bottom: 50px;
+        }
+
+        .card {
+            height: 100%;
+            /* 카드의 높이를 100%로 설정하여 전체 공간을 채웁니다. */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            /* 내용이 카드를 넘어갈 경우 숨깁니다. */
+            border-radius: 15px;
+            /* 선택적으로 카드의 테두리를 둥글게 만듭니다. */
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            /* 이미지를 카드에 맞게 조정합니다. */
+            height: 70%;
+            /* 이미지의 높이를 카드 높이의 70%로 설정합니다. */
+            width: 150%;
+            /* 이미지의 너비를 카드 너비에 맞게 조정합니다. */
+            /* 애니메이션을 추가하여 확대/축소 효과를 부드럽게 만듭니다. */
+        }
+
+        /* 마우스 호버 시 이미지 확대 효과 */
+        .card:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+            /* 마우스 호버 시 이미지를 1.1배 확대합니다. */
+        }
+
+        .card-body {
+            flex: 0 0 5%;
+            /* 텍스트 영역을 카드 전체의 30%로 설정합니다. */
+            padding: 1rem;
+            /* 선택적으로 여백을 추가할 수 있습니다. */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            .card {
+                margin: 16px auto;
+                width: 220px;
+                height: 300px;
+            }
+
+            .card-body {
+                font-size: 12px;
+            }
+        }
+
+        /* 기본 텍스트 크기 */
+        .lead {
+            font-size: 1.25rem;
+            /* 기본 텍스트 크기 */
+        }
+
+        /* 모바일 화면에서 텍스트 크기 조정 */
+        @media (max-width: 767px) {
+            .lead {
+                font-size: 1rem;
+
+                /* 모바일 화면에서 작게 조정한 텍스트 크기 */
+                .footer {
+                    font-size: 1rem;
+                }
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body data-bs-theme="dark">
+    <div class="background-banner">
+        <nav class="navbar border-bottom border-body d-flex justify-content-center" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link text-white" aria-current="page"
+                                href="{{ url_for('armysolution') }}">Home</a>
+                            <a class="nav-link text-white" href="{{ url_for('depression') }}">우울증</a>
+                            <a class="nav-link text-white" href="{{ url_for('anxiety') }}">불안장애</a>
+                            <a class="nav-link text-white" href="{{ url_for('ptsd') }}">PTSD</a>
+                            <a class="nav-link text-white" href="{{ url_for('adhd') }}">ADHD</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold text-body-emphasis">아미 솔루션<br>(Army Solution)</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 text-white">
+                    <br>
+                    용사 여러분,<br>
+                    혹시 혼자서 눈물을 삼키고 있나요?
+                    <br><br>
+                    도무지 내 마음이
+                    <br>
+                    왜이러는지 잘 모르겠다면,
+                    <br>
+                    정신건강의학과 병원에서
+                    <br>
+                    실제로 사용하는 검사로
+                    <br>
+                    내 마음의 점수를 매겨보세요.
+                    <br><br>
+                    나에게 해당될 것 같은
+                    <br>
+                    질환을 선택하세요.
+                    <br><br>
+                    간단한 검사를 마치면
+                    <br>
+                    개개인의 점수에 맞는
+                    <br>
+                    솔루션이 제공됩니다.
+                    <br><br>
+                    여러분에게 도움을 주고싶은
+                    <br>
+                    누군가가 있음을 잊지마세요.
+                    <br>
+                    같은 편에서 함께 고민해줄테니,
+                    <br>
+                    절대 포기하지 마세요.
+
+                </p>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">상담신청</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ url_for('armysolution_create') }}" method="POST" id="submitForm">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">이름</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">소속</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="belong">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">군번</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="armynumber">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">질환명</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="disease">
+                                <div id="emailHelp" class="form-text">검사 결과를 참고하여 의심되는 질환을 기록해주세요</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">전화번호</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="phone">
+                            </div>
+                            <button type="submit" class="btn btn-danger">제출하기</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4 mx-auto w-75 pb-5">
+            <div class="col">
+                <div class="card h-100">
+                    <a href="{{ url_for('depression') }}">
+                        <img src="https://st4.depositphotos.com/13193658/21340/i/450/depositphotos_213400058-stock-photo-side-view-depressed-army-man.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">우울증</h5>
+                            <p class="card-text">우울, 불면, 식욕문제</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="{{ url_for('anxiety') }}">
+                        <img src="https://img.freepik.com/premium-photo/veteran-suffering-from-panic-attack-using-inhaler_116547-33231.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">불안장애</h5>
+                            <p class="card-text">불안, 과호흡, 두근거림</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="{{ url_for('ptsd') }}">
+                        <img src="https://img.medscapestatic.com/pi/features/slideshow-slide/ptsd-6011009/updated/fig1.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">PTSD</h5>
+                            <p class="card-text">깜짝놀람, 악몽, 대인기피</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <a href="{{ url_for('adhd') }}">
+                        <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/326/326451/a-depressed-looking-man-in-an-army-uniform.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ADHD</h5>
+                            <p class="card-text">집중력, 기억력 저하</p>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger btn-lg mx-auto" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                군병원 마음클리닉 예약하기
+            </button>
+        </div>
+
+    </div>
+    <div class="container">
+        <footer>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2023 Army Solution, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-youtube"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-postcard"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
